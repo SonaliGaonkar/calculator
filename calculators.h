@@ -23,10 +23,10 @@ private slots:
     void MathButtonPressed();
     void EqualButtonPressed();
     void ChangeNumberSign();
-    void on_C_clicked();
+    void C();
 
-    void on_CE_clicked();
-    void on_DOT_clicked();
+    void CE();
+    void DOT();
 private:
 
 

@@ -36,8 +36,14 @@ calculators::calculators(QWidget *parent):
 
     connect(ui->Changesign, SIGNAL(released()), this,
             SLOT(ChangeNumberSign()));
-}
 
+    connect(ui->C, SIGNAL(released()), this,
+            SLOT(C()));
+      connect(ui->CE, SIGNAL(released()), this,
+             SLOT(CE()));
+      connect(ui->DOT, SIGNAL(released()), this,
+              SLOT(DOT()));
+  }
 
 calculators::~calculators()
 {
@@ -75,6 +81,9 @@ void calculators::MathButtonPressed(){
        subTrigger = true;
     }
     ui->Display->setText("");
+    // Update textEdit_subdisplay
+    m_subDisplay = QString::number(calcVal) + (   butVal  );
+    ui->subDisplay->setText(m_subDisplay);
 }
 void calculators::EqualButtonPressed(){
     double solutions = 0.0;
@@ -91,6 +100,9 @@ void calculators::EqualButtonPressed(){
                         solutions = calcVal / dblDisplayVal;
         }
     }
+
+              m_subDisplay = m_subDisplay + displayVal + " = ";
+              ui->subDisplay->setText(m_subDisplay);
                 ui->Display->setText(QString::number(solutions));
 }
 
@@ -103,7 +115,7 @@ void calculators::ChangeNumberSign(){
         ui->Display->setText(QString::number(dblDisplaySign));
     }
 }
-void calculators::on_C_clicked()
+void calculators::C()
 {
     QString displayVal  = "0";
     ui->Display ->setText(displayVal);
@@ -112,14 +124,18 @@ void calculators::on_C_clicked()
     m_firstNum = 0;
     m_secondNum = 0;
     m_result = 0;
+    QString m_subDisplay = "";
+     ui->subDisplay->setText(m_subDisplay);
 }
 
-void calculators ::on_CE_clicked()
+void calculators ::CE()
 {
     QString displayVal = "0";
     ui->Display->setText( displayVal);
+    QString m_subDisplay = "0";
+     ui->subDisplay->setText(m_subDisplay);
 }
-void calculators::on_DOT_clicked()
+void calculators::DOT()
 {
     QString displayVal;
    if (! displayVal.contains('.') )

@@ -530,27 +530,33 @@ QPushButton {
      </widget>
     </item>
     <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="label">
+     <widget class="QLabel" name="subDisplay">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string>QPushButton {
-	background-color: #C0C0C0;
+       <string notr="true">QPushButton {
+	background-color: red;
 	border: 1px solid gray;
 	padding: 5px;
 }
 QPushButton {
-	background-color: pink
+	background-color: red;
 	border: 1px solid gray;
 	Padding:5px
 }</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
      </widget>
     </item>
