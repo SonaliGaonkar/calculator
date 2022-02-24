@@ -24,9 +24,8 @@ private slots:
     void EqualButtonPressed();
     void ChangeNumberSign();
     void C();
-
     void CE();
-    void DOT();
+
 private:
 
 
@@ -35,5 +34,6 @@ private:
     double m_result;
     QString m_mainDisplay = "0";
     QString m_subDisplay = "";
+
 };
 #endif // CALCULATORS_H

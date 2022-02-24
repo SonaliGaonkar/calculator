@@ -41,8 +41,7 @@ calculators::calculators(QWidget *parent):
             SLOT(C()));
       connect(ui->CE, SIGNAL(released()), this,
              SLOT(CE()));
-      connect(ui->DOT, SIGNAL(released()), this,
-              SLOT(DOT()));
+
   }
 
 calculators::~calculators()
@@ -56,6 +55,7 @@ void calculators::NumPressed(){
     QString displayVal = ui->Display->text();
     if((displayVal.toDouble()==0)||(displayVal.toDouble()==0.0)){
         ui->Display->setText(butVal);
+
     }else {
 
         double dblNewVal = displayVal.toDouble()*10 + butVal.toDouble();
@@ -108,12 +108,12 @@ void calculators::EqualButtonPressed(){
 
 void calculators::ChangeNumberSign(){
     QString displayVal = ui->Display->text();
-    QRegExp reg("[-]/[0-9.]*");
+    QRegExp reg("[-]?[0-9.]*");
     if(reg.exactMatch(displayVal)){
         double dblDisplayVal = displayVal.toDouble();
         double dblDisplaySign = -1 * dblDisplayVal;
         ui->Display->setText(QString::number(dblDisplaySign));
-    }
+  }
 }
 void calculators::C()
 {
@@ -135,13 +135,5 @@ void calculators ::CE()
     QString m_subDisplay = "0";
      ui->subDisplay->setText(m_subDisplay);
 }
-void calculators::DOT()
-{
-    QString displayVal;
-   if (! displayVal.contains('.') )
-    {
-       displayVal += '.';
-        ui-> Display ->setText( displayVal  );
-    }
-}
+
 
