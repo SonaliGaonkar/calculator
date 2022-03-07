@@ -1,5 +1,11 @@
 ﻿#include "calculators.h"
 #include "ui_calculators.h"
+#include<QFile>
+#include<QApplication>
+#include<QIODevice>
+#include<QWidget>
+
+
 
 double calcVal = 0.0;
 bool divTrigger = false;
@@ -41,7 +47,13 @@ calculators::calculators(QWidget *parent):
             SLOT(C()));
       connect(ui->CE, SIGNAL(released()), this,
              SLOT(CE()));
+      connect(ui->T1, SIGNAL(released()), this,
+             SLOT(T1()));
 
+      connect(ui->T2, SIGNAL(released()), this,
+             SLOT(T2()));
+      connect(ui->T3, SIGNAL(released()), this,
+             SLOT(T3()));
   }
 
 calculators::~calculators()
@@ -135,5 +147,37 @@ void calculators ::CE()
     QString m_subDisplay = "0";
      ui->subDisplay->setText(m_subDisplay);
 }
+
+
+
+
+
+void calculators::T1()
+{
+
+
+    QFile file ("C:/Users/Sonali Gaonkar/Documents/calculators/Adaptic.qss");
+    file.open(QFile::ReadOnly);
+    QString stylesheets = QLatin1String(file.readAll());
+   setStyleSheet(stylesheets);
+   }
+void calculators ::T2()
+{
+ QFile fib("C:/Users/Sonali Gaonkar/Documents/calculators/fibers.qss");
+   fib.open(QFile::ReadOnly);
+   QString stylesheet = QLatin1String(fib.readAll());
+   setStyleSheet(stylesheet);
+}
+void calculators ::T3()
+{
+ QFile fib("C:/Users/Sonali Gaonkar/Documents/calculators/Irrorater.qss");
+   fib.open(QFile::ReadOnly);
+   QString stylesheet = QLatin1String(fib.readAll());
+   setStyleSheet(stylesheet);
+
+}
+
+
+
 
 

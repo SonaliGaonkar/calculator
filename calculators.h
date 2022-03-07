@@ -18,13 +18,21 @@ public:
 private:
     Ui::calculators *ui;
 
-private slots:
+
+
+public slots:
     void NumPressed();
     void MathButtonPressed();
     void EqualButtonPressed();
     void ChangeNumberSign();
     void C();
     void CE();
+
+void T1();
+    void T2();
+ void T3();
+
+
 
 private:
 

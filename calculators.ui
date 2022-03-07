@@ -6,336 +6,19 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>479</width>
-    <height>336</height>
+    <width>557</width>
+    <height>492</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>calculators</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="4" column="1">
-     <widget class="QPushButton" name="Button5">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>5</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="1">
-     <widget class="QPushButton" name="Button0">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="2">
-     <widget class="QPushButton" name="Button3">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item row="5" column="1">
-     <widget class="QPushButton" name="Button2">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>2</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="0" colspan="5">
-     <widget class="QLineEdit" name="Display">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #D891EF;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>0.0</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="3">
-     <widget class="QPushButton" name="CE">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>CE</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="0">
-     <widget class="QPushButton" name="Changesign">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #F88017;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>+/-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="2">
-     <widget class="QPushButton" name="Button6">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>6</string>
-      </property>
-     </widget>
-    </item>
-    <item row="6" column="2">
-     <widget class="QPushButton" name="Divide">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #F88017;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>/</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
-     <widget class="QPushButton" name="Button7">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>7</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="2">
-     <widget class="QPushButton" name="Button9">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>9</string>
-      </property>
-     </widget>
-    </item>
     <item row="6" column="3">
-     <widget class="QPushButton" name="Subtract">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #F88017;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>-</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="3">
      <widget class="QPushButton" name="Add">
       <property name="font">
        <font>
@@ -361,85 +44,33 @@ QPushButton {
       </property>
      </widget>
     </item>
-    <item row="5" column="0">
-     <widget class="QPushButton" name="Button1">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>1</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="0">
-     <widget class="QPushButton" name="Button4">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>4</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
-     <widget class="QPushButton" name="Button8">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>8</string>
-      </property>
-     </widget>
-    </item>
     <item row="5" column="3">
+     <widget class="QPushButton" name="CE">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>CE</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
      <widget class="QPushButton" name="Multiply">
       <property name="font">
        <font>
@@ -465,48 +96,12 @@ QPushButton {
       </property>
      </widget>
     </item>
-    <item row="0" column="0" colspan="3">
-     <widget class="QLabel" name="subDisplay">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
+    <item row="8" column="3">
+     <widget class="QPushButton" name="Subtract">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: red;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: red;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="4">
-     <widget class="QPushButton" name="C">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>14</pointsize>
+        <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
@@ -517,17 +112,69 @@ QPushButton {
 	padding: 5px;
 }
 QPushButton {
-	background-color:#C0C0C0;
+	background-color: #F88017;
 	border: 1px solid gray;
 	Padding:5px
 }</string>
       </property>
       <property name="text">
-       <string>C</string>
+       <string>-</string>
       </property>
      </widget>
     </item>
-    <item row="4" column="4" rowspan="3">
+    <item row="8" column="2">
+     <widget class="QPushButton" name="Divide">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #F88017;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>/</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="1">
+     <widget class="QPushButton" name="Button5">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>5</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="4" rowspan="3">
      <widget class="QPushButton" name="Equal">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
@@ -559,6 +206,394 @@ QPushButton {
       </property>
      </widget>
     </item>
+    <item row="5" column="1">
+     <widget class="QPushButton" name="Button8">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>8</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="0">
+     <widget class="QPushButton" name="Button7">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>7</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="4">
+     <widget class="QPushButton" name="C">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color:#C0C0C0;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>C</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QLabel" name="subDisplay">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: red;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: green;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="2">
+     <widget class="QPushButton" name="Button3">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="0">
+     <widget class="QPushButton" name="Changesign">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #F88017;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>+/-</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0" colspan="5">
+     <widget class="QLineEdit" name="Display">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #D891EF;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>0.0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPushButton" name="Button9">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>9</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="0">
+     <widget class="QPushButton" name="Button4">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>4</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="0">
+     <widget class="QPushButton" name="Button1">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="1">
+     <widget class="QPushButton" name="Button2">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="8" column="1">
+     <widget class="QPushButton" name="Button0">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>0</string>
+      </property>
+     </widget>
+    </item>
+    <item row="6" column="2">
+     <widget class="QPushButton" name="Button6">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #E5E4E2;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #E5E4E2
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="T1">
+      <property name="text">
+       <string>T1</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="T2">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>T2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="T3">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="text">
+       <string>T3</string>
+      </property>
+     </widget>
+    </item>
    </layout>
   </widget>
   <widget class="QMenuBar" name="menubar">
@@ -566,7 +601,7 @@ QPushButton {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>479</width>
+     <width>557</width>
      <height>22</height>
     </rect>
    </property>
