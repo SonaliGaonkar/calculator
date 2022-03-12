@@ -1,10 +1,8 @@
 #include "calculators.h"
 #include<QApplication>
 #include<QFile>
+#include<QStack>
 
-#include<QtWidgets>
-
-#include<QFile>
 int main(int argc, char *argv[])
 {
  QApplication a (argc, argv);
@@ -12,5 +10,14 @@ int main(int argc, char *argv[])
 
    class calculators w;
     w.show();
+
+
      return a.exec();
- }
+
+}
+
+
+
+
+
+

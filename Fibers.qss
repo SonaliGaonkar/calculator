@@ -127,7 +127,7 @@ QMenu::item:selected
 QPushButton
 {
 	background-color: #6384ff;
-	color: #fff;
+        color: #0033FF;
 	border: none;
 	min-width: 80px;
 	padding: 5px;

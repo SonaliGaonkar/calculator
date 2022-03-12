@@ -346,7 +346,7 @@ QPushButton {
      </widget>
     </item>
     <item row="8" column="0">
-     <widget class="QPushButton" name="Changesign">
+     <widget class="QPushButton" name="Exponent">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
@@ -367,7 +367,7 @@ QPushButton {
 }</string>
       </property>
       <property name="text">
-       <string>+/-</string>
+       <string>^</string>
       </property>
      </widget>
     </item>
@@ -591,6 +591,20 @@ QPushButton {
       </property>
       <property name="text">
        <string>T3</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="Open">
+      <property name="text">
+       <string>(</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="Close">
+      <property name="text">
+       <string>)</string>
       </property>
      </widget>
     </item>

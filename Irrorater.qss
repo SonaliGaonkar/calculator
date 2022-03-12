@@ -154,7 +154,7 @@ QToolTip
 QPushButton
 {
 	background-color: #20afe7;
-	color: #ffffff;
+        color: #006600;
 	border-style: solid;
 	border-width: 1px;
 	border-radius: 11px;

@@ -2,20 +2,14 @@
 #include "ui_calculators.h"
 #include<QFile>
 #include<QApplication>
-#include<QIODevice>
-#include<QWidget>
-
-
-
-double calcVal = 0.0;
-bool divTrigger = false;
-bool multiTrigger = false;
-bool addTrigger = false;
-bool subTrigger = false;
+#include "support.h"
+using namespace std;
+double calcVal =0;
 
 calculators::calculators(QWidget *parent):
      QMainWindow(parent),
      ui(new Ui::calculators)
+
 {
     ui->setupUi(this);
 
@@ -40,8 +34,8 @@ calculators::calculators(QWidget *parent):
     connect(ui->Equal, SIGNAL(released()), this,
             SLOT(EqualButtonPressed()));
 
-    connect(ui->Changesign, SIGNAL(released()), this,
-            SLOT(ChangeNumberSign()));
+    connect(ui->Exponent, SIGNAL(released()), this,
+            SLOT(MathButtonPressed()));
 
     connect(ui->C, SIGNAL(released()), this,
             SLOT(C()));
@@ -54,6 +48,10 @@ calculators::calculators(QWidget *parent):
              SLOT(T2()));
       connect(ui->T3, SIGNAL(released()), this,
              SLOT(T3()));
+      connect(ui->Open, SIGNAL(released()), this,
+             SLOT(addbrackets()));
+      connect(ui->Close, SIGNAL(released()), this,
+                                       SLOT(addbrackets()));
   }
 
 calculators::~calculators()
@@ -61,72 +59,35 @@ calculators::~calculators()
     delete ui;
 }
 
-void calculators::NumPressed(){
-    QPushButton *button = (QPushButton *)sender();
-    QString butVal = button->text();
-    QString displayVal = ui->Display->text();
-    if((displayVal.toDouble()==0)||(displayVal.toDouble()==0.0)){
-        ui->Display->setText(butVal);
+void calculators::NumPressed()
+{
 
-    }else {
-
-        double dblNewVal = displayVal.toDouble()*10 + butVal.toDouble();
-        ui->Display->setText(QString::number(dblNewVal, 'g',16));
-    }
-}
-void calculators::MathButtonPressed(){
-    divTrigger=false;
-    multiTrigger=false;
-    addTrigger=false;
-    subTrigger=false;
-    QString displayVal = ui->Display->text();
-    calcVal = displayVal.toDouble();
-    QPushButton *button = (QPushButton *)sender();
-    QString butVal = button->text();
-    if(QString::compare(butVal,"/",Qt::CaseInsensitive)==0){
-        divTrigger = true;
-    }    else if(QString::compare(butVal,"*",Qt::CaseInsensitive)==0){
-        multiTrigger = true;
-    }    else if(QString::compare(butVal,"+",Qt::CaseInsensitive)==0){
-        addTrigger = true;
-    }    else{
-       subTrigger = true;
-    }
-    ui->Display->setText("");
-    // Update textEdit_subdisplay
-    m_subDisplay = QString::number(calcVal) + (   butVal  );
-    ui->subDisplay->setText(m_subDisplay);
-}
-void calculators::EqualButtonPressed(){
-    double solutions = 0.0;
-    QString displayVal = ui->Display->text();
-    double dblDisplayVal = displayVal.toDouble();
-    if(addTrigger || subTrigger || multiTrigger|| divTrigger){
-        if(addTrigger){
-            solutions = calcVal + dblDisplayVal;
-           } else if(subTrigger){
-                solutions = calcVal - dblDisplayVal;
-               } else if(multiTrigger){
-                    solutions = calcVal * dblDisplayVal;
-                    } else {
-                        solutions = calcVal / dblDisplayVal;
-        }
+    QPushButton *button=(QPushButton*)sender();
+    if(ui->Display->text()=="0"){
+        ui->Display->setText(button->text());
+    }else{
+        string exp=ui->Display->text().toStdString();
+        size_t length=exp.length();
+        if(exp[length-1]=='+'||exp[length-1]=='*'||exp[length-1]=='-'||exp[length-1]=='/' ||exp[length-1]=='^'|| exp[length-1]=='(')
+            ui->Display->setText(ui->Display->text()+' '+button->text());
+        else
+            ui->Display->setText(ui->Display->text()+button->text());
     }
 
-              m_subDisplay = m_subDisplay + displayVal + " = ";
-              ui->subDisplay->setText(m_subDisplay);
-                ui->Display->setText(QString::number(solutions));
+}
+void calculators::MathButtonPressed()
+{
+    QPushButton*button =(QPushButton*)sender();
+    ui->Display->setText(ui->Display->text()+' '+button->text());
+};
+void calculators::EqualButtonPressed()
+{
+    ui->subDisplay->setText(ui->Display->text());
+    string expression=ui->Display->text().toStdString();
+    long long result = evaluate  (expression);
+    ui->Display->setText(QString::number(result,'g',15));
 }
 
-void calculators::ChangeNumberSign(){
-    QString displayVal = ui->Display->text();
-    QRegExp reg("[-]?[0-9.]*");
-    if(reg.exactMatch(displayVal)){
-        double dblDisplayVal = displayVal.toDouble();
-        double dblDisplaySign = -1 * dblDisplayVal;
-        ui->Display->setText(QString::number(dblDisplaySign));
-  }
-}
 void calculators::C()
 {
     QString displayVal  = "0";
@@ -147,15 +108,8 @@ void calculators ::CE()
     QString m_subDisplay = "0";
      ui->subDisplay->setText(m_subDisplay);
 }
-
-
-
-
-
 void calculators::T1()
 {
-
-
     QFile file ("C:/Users/Sonali Gaonkar/Documents/calculators/Adaptic.qss");
     file.open(QFile::ReadOnly);
     QString stylesheets = QLatin1String(file.readAll());
@@ -176,8 +130,8 @@ void calculators ::T3()
    setStyleSheet(stylesheet);
 
 }
-
-
-
-
+void calculators::addbrackets(){
+    QPushButton*button =(QPushButton*)sender();
+    ui->Display->setText(ui->Display->text()+' '+button->text());
+}
 
