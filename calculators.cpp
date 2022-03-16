@@ -3,8 +3,10 @@
 #include<QFile>
 #include<QApplication>
 #include "support.h"
+#include<math.h>
 using namespace std;
 double calcVal =0;
+
 
 calculators::calculators(QWidget *parent):
      QMainWindow(parent),
@@ -13,29 +15,41 @@ calculators::calculators(QWidget *parent):
 {
     ui->setupUi(this);
 
-    ui->Display->setText(QString::number(calcVal));
-    QPushButton *numButtons[10];
-    for(int i = 0; i< 10; ++i){
-        QString butName = "Button" + QString::number(i);
-        numButtons[i] = calculators::findChild<QPushButton *>(butName);
-        connect(numButtons[i], SIGNAL(released()), this,
-                SLOT(NumPressed()));
-    }
+    connect(ui->Button0, SIGNAL(released()), this,
+            SLOT(Button0()));
+    connect(ui->Button1, SIGNAL(released()), this,
+            SLOT(Button1()));
+    connect(ui->Button2, SIGNAL(released()), this,
+            SLOT(Button2()));
+    connect(ui->Button3, SIGNAL(released()), this,
+            SLOT(Button3()));
+    connect(ui->Button4, SIGNAL(released()), this,
+            SLOT(Button4()));
+    connect(ui->Button5, SIGNAL(released()), this,
+            SLOT(Button5()));
+    connect(ui->Button6, SIGNAL(released()), this,
+            SLOT(Button6()));
+    connect(ui->Button7, SIGNAL(released()), this,
+            SLOT(Button7()));
+    connect(ui->Button8, SIGNAL(released()), this,
+            SLOT(Button8()));
+    connect(ui->Button9, SIGNAL(released()), this,
+            SLOT(Button9()));
 
     connect(ui->Add, SIGNAL(released()), this,
-            SLOT(MathButtonPressed()));
+            SLOT(Add()));
     connect(ui->Subtract, SIGNAL(released()), this,
-            SLOT(MathButtonPressed()));
+            SLOT(Subtract()));
     connect(ui->Multiply, SIGNAL(released()), this,
-            SLOT(MathButtonPressed()));
+            SLOT(Multiply()));
     connect(ui->Divide, SIGNAL(released()), this,
-            SLOT(MathButtonPressed()));
-
+            SLOT(Divide()));
+    connect(ui->Exponent, SIGNAL(released()), this,
+            SLOT(Exponent()));
     connect(ui->Equal, SIGNAL(released()), this,
             SLOT(EqualButtonPressed()));
 
-    connect(ui->Exponent, SIGNAL(released()), this,
-            SLOT(MathButtonPressed()));
+
 
     connect(ui->C, SIGNAL(released()), this,
             SLOT(C()));
@@ -52,6 +66,9 @@ calculators::calculators(QWidget *parent):
              SLOT(addbrackets()));
       connect(ui->Close, SIGNAL(released()), this,
                                        SLOT(addbrackets()));
+      connect(ui->point, SIGNAL(released()), this,
+                                       SLOT(point()));
+
   }
 
 calculators::~calculators()
@@ -59,54 +76,157 @@ calculators::~calculators()
     delete ui;
 }
 
-void calculators::NumPressed()
-{
+void calculators:: numClicked(QString num)
 
-    QPushButton *button=(QPushButton*)sender();
-    if(ui->Display->text()=="0"){
-        ui->Display->setText(button->text());
-    }else{
-        string exp=ui->Display->text().toStdString();
-        size_t length=exp.length();
-        if(exp[length-1]=='+'||exp[length-1]=='*'||exp[length-1]=='-'||exp[length-1]=='/' ||exp[length-1]=='^'|| exp[length-1]=='(')
-            ui->Display->setText(ui->Display->text()+' '+button->text());
+    {
+        if (m_mainDisplay == "0")
+        {
+            m_mainDisplay = num;
+            ui->m_mainDisplay->setText(m_mainDisplay);
+        }
         else
-            ui->Display->setText(ui->Display->text()+button->text());
+        {
+            m_mainDisplay += num;
+            ui->m_mainDisplay->setText(m_mainDisplay);
+        }
     }
 
-}
-void calculators::MathButtonPressed()
-{
-    QPushButton*button =(QPushButton*)sender();
-    ui->Display->setText(ui->Display->text()+' '+button->text());
-};
+
+    void calculators::Add()
+    {
+        if (operatorPressed == add)
+            return;
+        //
+        m_firstNum = m_mainDisplay.toDouble();
+        operatorPressed = add;
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+
+        m_subDisplay = QString::number(m_firstNum) + " + " ;
+        ui->m_subDisplay->setText(m_subDisplay);
+    }
+
+    void calculators::Subtract()
+    {
+        if (operatorPressed == subtract)
+            return;
+
+        m_firstNum = m_mainDisplay.toDouble();
+        operatorPressed = subtract;
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+
+        m_subDisplay = QString::number(m_firstNum) + " - ";
+        ui->m_subDisplay->setText(m_subDisplay);
+    }
+
+    void calculators::Multiply()
+    {
+        if (operatorPressed == multiply)
+            return;
+        //
+        m_firstNum = m_mainDisplay.toDouble();
+        operatorPressed = multiply;
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+
+        m_subDisplay = QString::number(m_firstNum) + " * ";
+        ui->m_subDisplay->setText(m_subDisplay);
+    }
+
+    void calculators::Divide()
+    {
+        if (operatorPressed == divide)
+            return;
+        //
+        m_firstNum = m_mainDisplay.toDouble();
+        operatorPressed = divide;
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+
+        m_subDisplay = QString::number(m_firstNum) + " / " ;
+        ui->m_subDisplay->setText(m_subDisplay);
+    }
+    void calculators::Exponent()
+    {
+        if (operatorPressed == exponent)
+            return;
+        //
+        m_firstNum = m_mainDisplay.toDouble();
+        operatorPressed = exponent;
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+
+        m_subDisplay = QString::number(m_firstNum) + " ^ " ;
+        ui->m_subDisplay->setText(m_subDisplay);
+    }
+
+
+
 void calculators::EqualButtonPressed()
 {
-    ui->subDisplay->setText(ui->Display->text());
-    string expression=ui->Display->text().toStdString();
-    long long result = evaluate  (expression);
-    ui->Display->setText(QString::number(result,'g',15));
+    {
+        if (operatorPressed == equals)
+            return;
+
+      m_secondNum = m_mainDisplay.toDouble();
+       m_subDisplay = m_subDisplay+ QString::number( m_secondNum) + "  =  ";
+       ui->m_subDisplay->setText(m_subDisplay);
+
+
+        switch (operatorPressed)
+        {
+            case add:
+                m_result = m_firstNum + m_secondNum;
+                m_mainDisplay = QString::number(m_result);
+                ui->m_mainDisplay->setText(m_mainDisplay);
+                break;
+            case subtract:
+                m_result = m_firstNum - m_secondNum;
+                m_mainDisplay = QString::number(m_result);
+                ui->m_mainDisplay->setText(m_mainDisplay);
+                break;
+            case multiply:
+                m_result = m_firstNum * m_secondNum;
+                m_mainDisplay = QString::number(m_result);
+                ui->m_mainDisplay->setText(m_mainDisplay);
+                break;
+            case divide:
+                m_result = m_firstNum / m_secondNum;
+                m_mainDisplay = QString::number(m_result);
+                ui->m_mainDisplay->setText(m_mainDisplay);
+                break;
+          case exponent:
+            m_result =   pow (m_firstNum , m_secondNum);
+            m_mainDisplay = QString::number(m_result);
+            ui->m_mainDisplay->setText(m_mainDisplay);
+            break;
+        }
+        operatorPressed = equals;
+    }
+
+
 }
 
 void calculators::C()
 {
-    QString displayVal  = "0";
-    ui->Display ->setText(displayVal);
-    displayVal = "";
-    ui-> Display->setText( displayVal  );
-    m_firstNum = 0;
-    m_secondNum = 0;
-    m_result = 0;
-    QString m_subDisplay = "";
-     ui->subDisplay->setText(m_subDisplay);
+    {
+        m_mainDisplay = "";
+        ui->m_mainDisplay->setText(m_mainDisplay);
+        m_subDisplay = "";
+        ui->m_subDisplay->setText(m_subDisplay);
+        m_firstNum = 0;
+        m_secondNum = 0;
+        m_result = 0;
+    }
 }
 
 void calculators ::CE()
 {
-    QString displayVal = "0";
-    ui->Display->setText( displayVal);
-    QString m_subDisplay = "0";
-     ui->subDisplay->setText(m_subDisplay);
+    m_mainDisplay = "0";
+    ui->m_mainDisplay->setText(m_mainDisplay);
+    m_subDisplay = "";
+    ui->m_subDisplay->setText(m_subDisplay);
 }
 void calculators::T1()
 {
@@ -132,6 +252,66 @@ void calculators ::T3()
 }
 void calculators::addbrackets(){
     QPushButton*button =(QPushButton*)sender();
-    ui->Display->setText(ui->Display->text()+' '+button->text());
+    ui->m_mainDisplay->setText(ui->m_mainDisplay->text()+' '+button->text());
 }
+
+
+void calculators::point()
+
+{
+    if (!m_mainDisplay.contains('.'))
+    {
+        m_mainDisplay += '.';
+        ui->m_mainDisplay->setText(m_mainDisplay);
+    }
+}
+void calculators::Button0()
+{
+    numClicked("0");
+}
+void calculators::Button1()
+{
+    numClicked("1");
+}
+
+void calculators::Button2()
+{
+    numClicked("2");
+}
+
+void calculators::Button3()
+{
+    numClicked("3");
+}
+
+void calculators::Button4()
+{
+    numClicked("4");
+}
+
+void calculators::Button5()
+{
+    numClicked("5");
+}
+
+void calculators::Button6()
+{
+    numClicked("6");
+}
+
+void calculators::Button7()
+{
+    numClicked("7");
+}
+
+void calculators::Button8()
+{
+   numClicked("8");
+}
+
+void calculators::Button9()
+{
+    numClicked("9");
+}
+
 
