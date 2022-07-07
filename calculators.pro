@@ -15,6 +15,7 @@ SOURCES += \
 
 HEADERS += \
     calculators.h \
+    catch.h \
     support.h
 
 FORMS += \

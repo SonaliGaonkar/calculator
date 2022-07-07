@@ -4,6 +4,8 @@
 #include<QApplication>
 #include "support.h"
 #include<math.h>
+#include<catch.h>
+//#include<catch.cpp>
 using namespace std;
 double calcVal =0;
 
@@ -48,16 +50,12 @@ calculators::calculators(QWidget *parent):
             SLOT(Exponent()));
     connect(ui->Equal, SIGNAL(released()), this,
             SLOT(EqualButtonPressed()));
-
-
-
     connect(ui->C, SIGNAL(released()), this,
             SLOT(C()));
       connect(ui->CE, SIGNAL(released()), this,
              SLOT(CE()));
       connect(ui->T1, SIGNAL(released()), this,
              SLOT(T1()));
-
       connect(ui->T2, SIGNAL(released()), this,
              SLOT(T2()));
       connect(ui->T3, SIGNAL(released()), this,
@@ -65,9 +63,9 @@ calculators::calculators(QWidget *parent):
       connect(ui->Open, SIGNAL(released()), this,
              SLOT(addbrackets()));
       connect(ui->Close, SIGNAL(released()), this,
-                                       SLOT(addbrackets()));
+             SLOT(addbrackets()));
       connect(ui->point, SIGNAL(released()), this,
-                                       SLOT(point()));
+             SLOT(point()));
 
   }
 
@@ -92,7 +90,7 @@ void calculators:: numClicked(QString num)
     }
 
 
-    void calculators::Add()
+       void calculators::Add()
     {
         if (operatorPressed == add)
             return;
@@ -230,21 +228,21 @@ void calculators ::CE()
 }
 void calculators::T1()
 {
-    QFile file ("C:/Users/Sonali Gaonkar/Documents/calculators/Adaptic.qss");
+    QFile file ("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/Adaptic.qss");
     file.open(QFile::ReadOnly);
     QString stylesheets = QLatin1String(file.readAll());
    setStyleSheet(stylesheets);
    }
 void calculators ::T2()
 {
- QFile fib("C:/Users/Sonali Gaonkar/Documents/calculators/fibers.qss");
+ QFile fib("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/fibers.qss");
    fib.open(QFile::ReadOnly);
    QString stylesheet = QLatin1String(fib.readAll());
    setStyleSheet(stylesheet);
 }
 void calculators ::T3()
 {
- QFile fib("C:/Users/Sonali Gaonkar/Documents/calculators/Irrorater.qss");
+ QFile fib("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/Irrorater.qss");
    fib.open(QFile::ReadOnly);
    QString stylesheet = QLatin1String(fib.readAll());
    setStyleSheet(stylesheet);
