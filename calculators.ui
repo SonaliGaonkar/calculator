@@ -53,18 +53,6 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>0</string>
       </property>
@@ -78,18 +66,6 @@ QPushButton {
         <italic>false</italic>
         <bold>true</bold>
        </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
       </property>
       <property name="text">
        <string>1</string>
@@ -118,32 +94,20 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>2</string>
       </property>
      </widget>
     </item>
     <item row="7" column="4">
-     <widget class="QPushButton" name="Close">
+     <widget class="QPushButton" name="Clear">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>)</string>
+       <string>C</string>
       </property>
      </widget>
     </item>
@@ -221,18 +185,6 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>6</string>
       </property>
@@ -297,7 +249,7 @@ QPushButton {
      </widget>
     </item>
     <item row="4" column="3">
-     <widget class="QPushButton" name="CE">
+     <widget class="QPushButton" name="openbracket">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
@@ -318,24 +270,36 @@ QPushButton {
 }</string>
       </property>
       <property name="text">
-       <string>CE</string>
+       <string>(</string>
       </property>
      </widget>
     </item>
     <item row="7" column="3">
-     <widget class="QPushButton" name="Open">
+     <widget class="QPushButton" name="change_sign">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #F88017;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
       <property name="text">
-       <string>(</string>
+       <string>+/-</string>
       </property>
      </widget>
     </item>
     <item row="2" column="0" colspan="2">
-     <widget class="QLabel" name="m_subDisplay">
+     <widget class="QLabel" name="subDisplay">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -373,18 +337,6 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>3</string>
       </property>
@@ -406,25 +358,13 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>9</string>
       </property>
      </widget>
     </item>
     <item row="4" column="4">
-     <widget class="QPushButton" name="C">
+     <widget class="QPushButton" name="closebracket">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -450,12 +390,12 @@ QPushButton {
 }</string>
       </property>
       <property name="text">
-       <string>C</string>
+       <string>)</string>
       </property>
      </widget>
     </item>
     <item row="3" column="0" colspan="5">
-     <widget class="QLineEdit" name="m_mainDisplay">
+     <widget class="QLineEdit" name="mainDisplay">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -496,18 +436,6 @@ QPushButton {
         <italic>false</italic>
         <bold>true</bold>
        </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
       </property>
       <property name="text">
        <string>4</string>
@@ -563,18 +491,6 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>8</string>
       </property>
@@ -589,25 +505,13 @@ QPushButton {
         <bold>true</bold>
        </font>
       </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #E5E4E2;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #E5E4E2
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
       <property name="text">
        <string>7</string>
       </property>
      </widget>
     </item>
     <item row="8" column="4">
-     <widget class="QPushButton" name="point">
+     <widget class="QPushButton" name="decimal">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Ignored">
         <horstretch>0</horstretch>

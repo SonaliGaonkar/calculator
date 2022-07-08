@@ -3,7 +3,7 @@
 #include<cmath>
 
 //function to return specific substring start from specific position unil reaching next " "
-string scanNum(int &i,string str){
+  string scanNum(int &i,string str){
    string value;
    value = str[i++];
    while(str[i]!=' ' && i<str.length()){
@@ -15,6 +15,7 @@ string scanNum(int &i,string str){
 
 //Function to return precedence of operators
 int prec(char c) {
+
     if(c == '^')
         return 3;
     else if(c == '/' || c=='*')
@@ -79,7 +80,7 @@ string infixToPostfix(string s) {
 
 //function to detect if the char is operator or not
 int isOperator(char ch){
-   if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^')
+   if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^' )
       return 1;
    else return 0;
 }
@@ -102,7 +103,7 @@ long long operation(long long a, long long b, char op){
          return b/a;
       else if(op == '^')
          return (long long)pow(b,a);
-      else
+          else
          return INT_MIN;
 }
 
