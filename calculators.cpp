@@ -78,7 +78,7 @@ void calculators::NumPressed()
 }
 void calculators::MathButtonPressed()
 {
-    QPushButton*button =(QPushButton*)sender();
+    QPushButton *button =(QPushButton*)sender();
     ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
 };
 void calculators::EqualButtonPressed()
@@ -98,24 +98,35 @@ void calculators::C()
     m_firstNum = 0;
     m_secondNum = 0;
     m_result = 0;
-    QString m_submainDisplay = "";
-     ui->subDisplay->setText(m_submainDisplay);
+    QString subDisplay = "";
+     ui->subDisplay->setText(subDisplay);
 }
 void calculators ::change_sign()
 {
 
-     QPushButton *button = (QPushButton*) sender();
-     double labelNumber;
+  //   QPushButton *button = (QPushButton*)sender();
+    /* if( button->text()=="+/-")
+     {
+         m_result = ui->mainDisplay->text().toDouble();
+         m_result =m_result * -1;*/
+         string expression=ui->mainDisplay->text().toStdString();
+         long long result = evaluate(expression);
+         ui->mainDisplay->setText(QString::number(result,'g',15));
+
+
+
+     /*double labelNumber;
      QString newLabel;
 
-     if(button->text() == "+/-")
-     {
+
+
          labelNumber = ui->mainDisplay->text().toDouble();
          labelNumber = labelNumber * -1;
-         newLabel = QString::number(labelNumber,'g',15);
-         ui->mainDisplay->setText(newLabel);
-     }
+        newLabel = QString::number(labelNumber,'g',15);
+        ui->mainDisplay->setText(newLabel);*/
 }
+
+
 
 void calculators ::decimal()
 {

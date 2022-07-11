@@ -16,7 +16,7 @@
 //Function to return precedence of operators
 int prec(char c) {
 
-    if(c == '^')
+    if(c == '^' || c == '+/-')
         return 3;
     else if(c == '/' || c=='*')
         return 2;
@@ -80,7 +80,7 @@ string infixToPostfix(string s) {
 
 //function to detect if the char is operator or not
 int isOperator(char ch){
-   if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^' )
+   if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^' || ch == '+/-')
       return 1;
    else return 0;
 }
@@ -89,10 +89,12 @@ int isOperator(char ch){
 int isOperand(char ch){
       if(ch >= '0' && ch <= '9')
          return 1;
-      else return 0;
+      else
+          return 0;
 }
 
 long long operation(long long a, long long b, char op){
+
       if(op == '+')
          return b+a;
       else if(op == '-')
@@ -103,6 +105,8 @@ long long operation(long long a, long long b, char op){
          return b/a;
       else if(op == '^')
          return (long long)pow(b,a);
+      else if(op== '+/-')
+          return a* -1;
           else
          return INT_MIN;
 }

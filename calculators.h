@@ -42,8 +42,8 @@ private:
     double m_firstNum;
     double m_secondNum;
     double m_result;
-    QString m_mainDisplay = "";
-    QString m_subDisplay = "";
+    QString mainDisplay = "";
+    QString subDisplay = "";
 };
 
 
