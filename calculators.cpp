@@ -91,41 +91,24 @@ void calculators::EqualButtonPressed()
 
 void calculators::C()
 {
-    QString mainDisplayVal  = "0";
-    ui->mainDisplay ->setText(mainDisplayVal);
-    mainDisplayVal = "";
-    ui-> mainDisplay->setText( mainDisplayVal  );
-    m_firstNum = 0;
-    m_secondNum = 0;
-    m_result = 0;
+    QString mainDisplayVal = "";
+    ui-> mainDisplay->setText( mainDisplayVal);
     QString subDisplay = "";
      ui->subDisplay->setText(subDisplay);
 }
 void calculators ::change_sign()
 {
+         QString text = ui->mainDisplay->text();
+         double value = text.toDouble();
 
-  //   QPushButton *button = (QPushButton*)sender();
-    /* if( button->text()=="+/-")
-     {
-         m_result = ui->mainDisplay->text().toDouble();
-         m_result =m_result * -1;*/
-         string expression=ui->mainDisplay->text().toStdString();
-         long long result = evaluate(expression);
-         ui->mainDisplay->setText(QString::number(result,'g',15));
+         if (value > 0.0){
+             text.prepend(tr("-"));
+         }else if (value <0.0){
+             text.remove(0,1);
+         }
+       ui->mainDisplay->setText(text);
 
-
-
-     /*double labelNumber;
-     QString newLabel;
-
-
-
-         labelNumber = ui->mainDisplay->text().toDouble();
-         labelNumber = labelNumber * -1;
-        newLabel = QString::number(labelNumber,'g',15);
-        ui->mainDisplay->setText(newLabel);*/
 }
-
 
 
 void calculators ::decimal()

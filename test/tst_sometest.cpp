@@ -1,6 +1,6 @@
 #include <catch.hpp>
 #include <QString>
-TEST_CASE("My first test with Catch2", "[fancy]")
+TEST_CASE("MCatch2", "[fancy]")
 {
    SECTION("Something", "")
    {
