@@ -18,7 +18,6 @@ class calculators : public QMainWindow
 {
     Q_OBJECT
 
-
 public:
     calculators(QWidget *parent = nullptr);
     ~calculators();
@@ -45,7 +44,4 @@ private:
     QString mainDisplay = "";
     QString subDisplay = "";
 };
-
-
-
 #endif // CALCULATORS_H

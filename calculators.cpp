@@ -62,7 +62,6 @@ calculators::~calculators()
 
 void calculators::NumPressed()
 {
-
     QPushButton *button=(QPushButton*)sender();
     if(ui->mainDisplay->text()=="0"){
         ui->mainDisplay->setText(button->text());
@@ -74,13 +73,14 @@ void calculators::NumPressed()
         else
             ui->mainDisplay->setText(ui->mainDisplay->text()+button->text());
     }
-
 }
+
 void calculators::MathButtonPressed()
 {
     QPushButton *button =(QPushButton*)sender();
     ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
-};
+}
+
 void calculators::EqualButtonPressed()
 {
     ui->subDisplay->setText(ui->mainDisplay->text());
@@ -96,6 +96,7 @@ void calculators::C()
     QString subDisplay = "";
      ui->subDisplay->setText(subDisplay);
 }
+
 void calculators ::change_sign()
 {
          QString text = ui->mainDisplay->text();
@@ -107,9 +108,7 @@ void calculators ::change_sign()
              text.remove(0,1);
          }
        ui->mainDisplay->setText(text);
-
 }
-
 
 void calculators ::decimal()
 {
@@ -127,7 +126,7 @@ void calculators::T1()
     file.open(QFile::ReadOnly);
     QString stylesheets = QLatin1String(file.readAll());
    setStyleSheet(stylesheets);
-   }
+}
 
 void calculators ::T2()
 {
@@ -136,12 +135,11 @@ void calculators ::T2()
    QString stylesheet = QLatin1String(fib.readAll());
    setStyleSheet(stylesheet);
 }
+
 void calculators ::T3()
 {
  QFile fib("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/Irrorater.qss");
    fib.open(QFile::ReadOnly);
    QString stylesheet = QLatin1String(fib.readAll());
    setStyleSheet(stylesheet);
-
 }
-

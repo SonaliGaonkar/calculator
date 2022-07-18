@@ -27,5 +27,4 @@ int isOperand(char ch);
 //final function that get infix expression and evaluate it by convert it to Postfix
   long long evaluate(string str);
 
-
 #endif // SUPPORT_H

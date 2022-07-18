@@ -93,9 +93,10 @@ int isOperand(char ch){
           return 0;
 }
 
-long long operation(long long a, long long b, char op){
+long long operation(long long a, long long b, char op)
+{
 
-      if(op == '+')
+          if(op == '+')
          return (b+a);
       else if(op == '-')
          return b-a;
@@ -105,11 +106,11 @@ long long operation(long long a, long long b, char op){
          return b/a;
       else if(op == '^')
          return (long long)pow(b,a);
-
           else
          return INT_MIN;
-}
 
+
+}
 //function to return value from postifix expression
 long long postfixEval(string postfix){
    long long a, b;

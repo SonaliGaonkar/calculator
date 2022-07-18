@@ -1,9 +1,10 @@
+#define CATCH_CONFIG_MAIN
 #include "calculators.h"
 #include<QApplication>
 #include<QFile>
 #include<QStack>
-
-
+#include <catch.hpp>
+#define UNIT_TEST_ENABLED
 
 int main(int argc, char *argv[])
 {
@@ -13,5 +14,4 @@ int main(int argc, char *argv[])
     w.show();
 
      return a.exec();
-
 }
