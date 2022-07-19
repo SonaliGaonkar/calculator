@@ -1,6 +1,6 @@
 #include "catch.hpp"
 
-long long operation(long long a, long long b, char op)
+/*long long operation(long long a, long long b, char op)
 {
        if(op == '+')
          return b+a;
@@ -16,8 +16,8 @@ long long operation(long long a, long long b, char op)
          return INT_MIN;
 
 
-}
-TEST_CASE("operations", "[arithmetic]") {
+}*/
+//TEST_CASE("operations", "[arithmetic]") {
 
-    REQUIRE(return == 4);
-}
+   // REQUIRE(return == 4);
+//}

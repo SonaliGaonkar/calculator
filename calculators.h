@@ -27,16 +27,17 @@ private:
 bool waitingForOperand;
 
   public slots:
-    void NumPressed();
-    void MathButtonPressed();
-    void EqualButtonPressed();
-    void C();
-    void change_sign();
+    void numPressed();
+    void mathButtonPressed();
+    void equalButtonPressed();
+    void clear();
+    void changeSign();
     void decimal();
-    void addbrackets();
-    void T1();
-    void T2();
-    void T3();
+    void addBrackets();
+    void theme1();
+    void theme2();
+    void theme3();
+    void setText();
 private:
     double m_firstNum;
     double m_secondNum;
