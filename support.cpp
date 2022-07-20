@@ -2,10 +2,6 @@
 #include<stack>
 #include<cmath>
 #include<calculators.h>
-#include<ui_calculators.h>
-//using namespace Ui;
-
-//ui(new Ui::calculators)
 
 
 //function to return specific substring start from specific position unil reaching next " "
@@ -142,6 +138,3 @@ long long evaluate(string str){
     return postfixEval(temp);
 }
 
-long long setText(string){
-  //  Ui::ui->subDisplay->setText(ui->mainDisplay->text());
-}

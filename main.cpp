@@ -12,6 +12,8 @@ int main(int argc, char *argv[])
 
   class calculators w;
     w.show();
-
      return a.exec();
+
+
+
 }

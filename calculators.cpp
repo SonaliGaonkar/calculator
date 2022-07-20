@@ -5,8 +5,7 @@
 #include<QApplication>
 #include "support.h"
 
-using namespace std;
-double calcVal =0;
+double calcVal;
 
 calculators::calculators(QWidget *parent):
      QMainWindow(parent),
@@ -21,83 +20,59 @@ calculators::calculators(QWidget *parent):
         QString butName = "Button" + QString::number(i);
         numButtons[i] = calculators::findChild<QPushButton *>(butName);
 
-        connect(numButtons[i], SIGNAL(released()), this,
-                SLOT(numPressed()));
-    }
-    connect(ui->Add, SIGNAL(released()), this,
-            SLOT(mathButtonPressed()));
+ connect(numButtons[i], SIGNAL(released()),this, SLOT(setText()));
+  }
+    connect(ui->Add, SIGNAL(released()),this ,SLOT(setText()));
     connect(ui->Subtract, SIGNAL(released()), this,
-            SLOT(mathButtonPressed()));
+            SLOT(setText()));
     connect(ui->Multiply, SIGNAL(released()), this,
-            SLOT(mathButtonPressed()));
+            SLOT(setText()));
     connect(ui->Divide, SIGNAL(released()), this,
-            SLOT(mathButtonPressed()));
+            SLOT(setText()));
+    connect(ui->Exponent, SIGNAL(released()), this,
+            SLOT(setText()));
+    connect(ui->decimal, SIGNAL(released()), this,
+           SLOT(setText()));
+    connect(ui->openbracket, SIGNAL(released()), this,
+           SLOT(setText()));
+    connect(ui->closebracket, SIGNAL(released()), this,
+           SLOT(setText()));
+    connect(ui->decimal, SIGNAL(released()), this,
+           SLOT(setText()));
+
     connect(ui->Equal, SIGNAL(released()), this,
             SLOT(equalButtonPressed()));
+      connect(ui->change_sign, SIGNAL(released()), this,
+           SLOT(changesign()));
 
-    connect(ui->Exponent, SIGNAL(released()), this,
-            SLOT(mathButtonPressed()));
-
-    connect(ui->Clear, SIGNAL(released()), this,
-            SLOT(clear()));
-
-      connect(ui->decimal, SIGNAL(released()), this,
-             SLOT(decimal()));
-       connect(ui->change_sign, SIGNAL(released()), this,
-             SLOT(changeSign()));;
       connect(ui->T1, SIGNAL(released()), this,
              SLOT(theme1()));
       connect(ui->T2, SIGNAL(released()), this,
              SLOT(theme2()));
       connect(ui->T3, SIGNAL(released()), this,
              SLOT(theme3()));
-      connect(ui->openbracket, SIGNAL(released()), this,
-             SLOT(addBrackets()));
-      connect(ui->closebracket, SIGNAL(released()), this,
-                                       SLOT(addBrackets()));
+
   }
 
 calculators::~calculators()
 {
-    delete ui;
+  delete ui;
 }
 void calculators::setText()
 {
     QPushButton *button=(QPushButton*)sender();
  ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
-}
-
-void calculators::numPressed()
-   {
-        string exp=ui->mainDisplay->text().toStdString();
-        size_t length=exp.length();
-        if(exp[length-1]=='+'||exp[length-1]=='*'||exp[length-1]=='-'||exp[length-1]=='/' ||exp[length-1]=='^' || exp[length-1]=='(')
-           setText();
-        else
-          setText();
-    }
-
-
-void calculators::mathButtonPressed()
-{
-     setText();
+ ui->subDisplay->setText(ui->mainDisplay->text());
 }
 
 void calculators::equalButtonPressed()
 {
-    ui->subDisplay->setText(ui->mainDisplay->text());
+    setText();
     string expression=ui->mainDisplay->text().toStdString();
     long long result = evaluate  (expression);
     ui->mainDisplay->setText(QString::number(result,'g',15));
 }
 
-void calculators::clear()
-{
-    QString mainDisplayVal = "";
-    ui-> mainDisplay->setText( mainDisplayVal);
-    QString subDisplay = "";
-     ui->subDisplay->setText(subDisplay);
-}
 
 void calculators ::changeSign()
 {
@@ -110,16 +85,6 @@ void calculators ::changeSign()
              text.remove(0,1);
          }
        ui->mainDisplay->setText(text);
-}
-
-void calculators ::decimal()
-{
-     ui->mainDisplay->setText(ui->mainDisplay->text() + ".");
-}
-
-void calculators::addBrackets(){
-    QPushButton*button =(QPushButton*)sender();
-   setText();// ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
 }
 
 void calculators::theme1()

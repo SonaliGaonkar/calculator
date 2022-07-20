@@ -9,7 +9,6 @@
 #include <stack>
 #include <vector>
 
-using namespace std;
 QT_BEGIN_NAMESPACE
 namespace Ui { class calculators; }
 QT_END_NAMESPACE
@@ -22,18 +21,13 @@ public:
     calculators(QWidget *parent = nullptr);
     ~calculators();
 
-private:
+public:
     Ui::calculators *ui;
 bool waitingForOperand;
 
   public slots:
-    void numPressed();
-    void mathButtonPressed();
     void equalButtonPressed();
-    void clear();
     void changeSign();
-    void decimal();
-    void addBrackets();
     void theme1();
     void theme2();
     void theme3();

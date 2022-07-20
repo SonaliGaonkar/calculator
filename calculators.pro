@@ -19,8 +19,7 @@ SOURCES += \
     catch.cpp \
     main.cpp \
     calculators.cpp \
-    support.cpp \
-    utils.cpp
+    support.cpp
 
 HEADERS += \
     calculators.h \
