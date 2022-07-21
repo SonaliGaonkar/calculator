@@ -69,7 +69,7 @@ QPushButton {
      </widget>
     </item>
     <item row="10" column="3">
-     <widget class="QPushButton" name="Subtract">
+     <widget class="QPushButton" name="Subtraction">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
@@ -95,7 +95,7 @@ QPushButton {
      </widget>
     </item>
     <item row="0" column="4">
-     <widget class="QPushButton" name="T3">
+     <widget class="QPushButton" name="Theme3">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
         <horstretch>0</horstretch>
@@ -168,7 +168,7 @@ QPushButton {
      </widget>
     </item>
     <item row="0" column="3">
-     <widget class="QPushButton" name="T2">
+     <widget class="QPushButton" name="Theme2">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -346,7 +346,7 @@ QPushButton {
      </widget>
     </item>
     <item row="0" column="2">
-     <widget class="QPushButton" name="T1">
+     <widget class="QPushButton" name="Theme1">
       <property name="text">
        <string>T1</string>
       </property>
@@ -456,7 +456,7 @@ QPushButton {
      </widget>
     </item>
     <item row="8" column="3">
-     <widget class="QPushButton" name="Add">
+     <widget class="QPushButton" name="Addition">
       <property name="font">
        <font>
         <pointsize>16</pointsize>
@@ -482,7 +482,7 @@ QPushButton {
      </widget>
     </item>
     <item row="10" column="2">
-     <widget class="QPushButton" name="Divide">
+     <widget class="QPushButton" name="Division">
       <property name="font">
        <font>
         <pointsize>16</pointsize>

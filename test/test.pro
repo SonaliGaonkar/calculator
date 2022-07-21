@@ -10,7 +10,8 @@ isEmpty(CATCH_INCLUDE_DIR): {
     message("CATCH_INCLUDE_DIR is not set, assuming Catch2 can be found automatically in your system")
 }
 
-SOURCES +=     main.cpp     tst_sometest.cpp
+SOURCES +=     main.cpp     \
+    catch.cpp
 
 HEADERS += \
     catch.hpp

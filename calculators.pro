@@ -16,14 +16,12 @@ isEmpty(CATCH_INCLUDE_DIR): {
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    catch.cpp \
     main.cpp \
     calculators.cpp \
     support.cpp
 
 HEADERS += \
     calculators.h \
-    catch.hpp \
     support.h \
 
 FORMS += \

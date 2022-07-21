@@ -5,8 +5,8 @@
 
 
 //function to return specific substring start from specific position unil reaching next " "
-  string scanNum(int &i,string str){
-   string value;
+  std::string scanNum(int &i,std::string str){
+   std::string value;
    value = str[i++];
    while(str[i]!=' ' && i<str.length()){
        value+=str[i++];
@@ -29,10 +29,10 @@ int prec(char c) {
 }
 
 // function to convert infix expression to postfix expression
-string infixToPostfix(string s) {
+std::string infixToPostfix(std::string s) {
 
-    stack<char> st; //For stack operations
-    string result;
+    std::stack<char> st; //For stack operations
+    std::string result;
 
     for(int i = 0; i < s.length(); i++) {
         char c = s[i];
@@ -114,9 +114,9 @@ long long operation(long long a, long long b, char op)
 
 }
 //function to return value from postifix expression
-long long postfixEval(string postfix){
+long long postfixEval(std::string postfix){
    long long a, b;
-   stack<long long> stk;
+   std::stack<long long> stk;
    int i;
    for(i=0; i<postfix.length(); i++){
       if(isOperator(postfix[i]) == 1){
@@ -133,8 +133,8 @@ long long postfixEval(string postfix){
 }
 
 //final function that get infix expression and evaluate it by convert it to Postfix
-long long evaluate(string str){
-    string temp=infixToPostfix(str);
+long long evaluate(std::string str){
+   std:: string temp=infixToPostfix(str);
     return postfixEval(temp);
 }
 

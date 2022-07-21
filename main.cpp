@@ -3,7 +3,7 @@
 #include<QApplication>
 #include<QFile>
 #include<QStack>
-#include <catch.hpp>
+
 #define UNIT_TEST_ENABLED
 
 int main(int argc, char *argv[])
