@@ -23,6 +23,22 @@ TEST_CASE( "precedence checking", "[prec]" ) {
     REQUIRE(prec('k') == -1);
 }
 
+int isOperator(char ch){
+   if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^' )
+      return 1;
+   else return 0;
+}
+
+TEST_CASE( "operator checking", "[operator]" ) {
+
+      REQUIRE(isOperator('+')  == 1 );
+      REQUIRE(isOperator('-')  == 1 );
+      REQUIRE(isOperator('*')  == 1 );
+      REQUIRE(isOperator('/')  == 1 );
+      REQUIRE(isOperator('^')  == 1 );
+      REQUIRE(isOperator('&')  == 0 );
+}
+
 int isOperand(char ch){
       if(ch >= '0' && ch <= '9')
          return 1;
@@ -61,9 +77,13 @@ long long operation(long long b, char op, long long a)
          return INT_MIN;
 
 }
-TEST_CASE( "ADDITION", "[ADD]" ) {
+TEST_CASE( "checking of all operations", "[Add,subtract,multiply,divide,exponent]" ) {
 
-
+    REQUIRE( operation(6,'+',3) == 9 );
     REQUIRE( operation(6,'-',3) == 3 );
+    REQUIRE( operation(6,'*',3) == 18 );
+    REQUIRE( operation(6,'/',3) == 2 );
+    REQUIRE( operation(6,'^',3) == 216 );
+
 }
 

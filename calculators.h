@@ -26,12 +26,13 @@ public:
 bool waitingForOperand;
 
   public slots:
+    void setText();
     void equalButtonPressed();
-    void changeSign();
+    void decimal();
     void theme1();
     void theme2();
     void theme3();
-    void setText();
+
 private:
     double m_firstNum;
     double m_secondNum;

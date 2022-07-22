@@ -23,14 +23,13 @@ calculators::calculators(QWidget *parent):
     connect(ui->Multiply,    SIGNAL(released()), this, SLOT(setText()));
     connect(ui->Division,    SIGNAL(released()), this, SLOT(setText()));
     connect(ui->Exponent,    SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->decimal,     SIGNAL(released()), this, SLOT(setText()));
+
     connect(ui->openbracket, SIGNAL(released()), this, SLOT(setText()));
     connect(ui->closebracket,SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->decimal,     SIGNAL(released()), this, SLOT(setText()));
+
+    connect(ui->decimal,     SIGNAL(released()), this, SLOT(decimal()));
 
     connect(ui->Equal,       SIGNAL(released()), this, SLOT(equalButtonPressed()));
-    connect(ui->change_sign, SIGNAL(released()), this, SLOT(changeSign()));
-
     connect(ui->Theme1,      SIGNAL(released()), this, SLOT(theme1()));
     connect(ui->Theme2,      SIGNAL(released()), this, SLOT(theme2()));
     connect(ui->Theme3,      SIGNAL(released()), this, SLOT(theme3()));
@@ -48,26 +47,19 @@ void calculators::setText()
     ui->subDisplay->setText(ui->mainDisplay->text());
 }
 
+void calculators::decimal(){
+    QPushButton *button=(QPushButton*)sender();
+    ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
+    ui->subDisplay->setText(ui->mainDisplay->text());
+
+}
+
 void calculators::equalButtonPressed()
 {
     setText();
     std::string expression=ui->mainDisplay->text().toStdString();
     long long result = evaluate  (expression);
     ui->mainDisplay->setText(QString::number(result,'g',15));
-}
-
-
-void calculators ::changeSign()
-{
-         QString text = ui->mainDisplay->text();
-         double value = text.toDouble();
-
-         if (value > 0.0){
-             text.prepend(tr("-"));
-         }else if (value <0.0){
-             text.remove(0,1);
-         }
-       ui->mainDisplay->setText(text);
 }
 
 void calculators::theme1()

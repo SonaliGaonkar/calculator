@@ -18,18 +18,6 @@
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
-    <item row="7" column="4">
-     <widget class="QPushButton" name="Clear">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>C</string>
-      </property>
-     </widget>
-    </item>
     <item row="10" column="1">
      <widget class="QPushButton" name="Button0">
       <property name="font">
@@ -41,30 +29,6 @@
       </property>
       <property name="text">
        <string>0</string>
-      </property>
-     </widget>
-    </item>
-    <item row="7" column="3">
-     <widget class="QPushButton" name="change_sign">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #F88017;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>+/-</string>
       </property>
      </widget>
     </item>
@@ -180,32 +144,6 @@ QPushButton {
       </property>
      </widget>
     </item>
-    <item row="4" column="3">
-     <widget class="QPushButton" name="openbracket">
-      <property name="font">
-       <font>
-        <pointsize>16</pointsize>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>(</string>
-      </property>
-     </widget>
-    </item>
     <item row="7" column="0">
      <widget class="QPushButton" name="Button7">
       <property name="font">
@@ -231,37 +169,6 @@ QPushButton {
       </property>
       <property name="text">
        <string>3</string>
-      </property>
-     </widget>
-    </item>
-    <item row="4" column="4">
-     <widget class="QPushButton" name="closebracket">
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>14</pointsize>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color: #C0C0C0;
-	border: 1px solid gray;
-	padding: 5px;
-}
-QPushButton {
-	background-color:#C0C0C0;
-	border: 1px solid gray;
-	Padding:5px
-}</string>
-      </property>
-      <property name="text">
-       <string>)</string>
       </property>
      </widget>
     </item>
@@ -538,6 +445,75 @@ QPushButton {
       </property>
       <property name="alignment">
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="3">
+     <widget class="QPushButton" name="openbracket">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>(</string>
+      </property>
+     </widget>
+    </item>
+    <item row="7" column="4">
+     <widget class="QPushButton" name="closebracket">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color: #C0C0C0;
+	border: 1px solid gray;
+	padding: 5px;
+}
+QPushButton {
+	background-color:#C0C0C0;
+	border: 1px solid gray;
+	Padding:5px
+}</string>
+      </property>
+      <property name="text">
+       <string>)</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="Clear">
+      <property name="font">
+       <font>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>C</string>
       </property>
      </widget>
     </item>
