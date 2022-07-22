@@ -48,10 +48,11 @@ void calculators::setText()
 }
 
 void calculators::decimal(){
-    QPushButton *button=(QPushButton*)sender();
-    ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
-    ui->subDisplay->setText(ui->mainDisplay->text());
 
+    if (!ui->mainDisplay->text().contains('.'));
+        {
+            ui->mainDisplay->setText(ui->mainDisplay->text()+'.');
+}
 }
 
 void calculators::equalButtonPressed()
