@@ -5,7 +5,7 @@
 
 
 //function to return specific substring start from specific position unil reaching next " "
-  std::string scanNum(int &i,std::string str){
+  std::string scanNum(long long &i,std::string str){
    std::string value;
    value = str[i++];
    while(str[i]!=' ' && i<str.length()){
@@ -31,11 +31,11 @@ int prec(char c) {
 // function to convert infix expression to postfix expression
 std::string infixToPostfix(std::string s) {
 
-    std::stack<char> st; //For stack operations
+    std::stack<long long> st; //For stack operations
     std::string result;
 
-    for(int i = 0; i < s.length(); i++) {
-        char c = s[i];
+    for(long long i = 0; i < s.length(); i++) {
+        long long c = s[i];
         if(c==' ')continue;
 
         // If the character is an operand, add it to output string.
@@ -88,7 +88,7 @@ int isOperator(char ch){
 }
 
 //function to detect if the char is operand or not
-int isOperand(char ch){
+ int isOperand(char ch){
       if(ch >= '0' && ch <= '9')
          return 1;
       else
@@ -116,8 +116,8 @@ long long operation(long long a, long long b, char op)
 //function to return value from postifix expression
 long long postfixEval(std::string postfix){
    long long a, b;
-   std::stack<long long> stk;
-   int i;
+   std::stack<char> stk;
+   long long i;
    for(i=0; i<postfix.length(); i++){
       if(isOperator(postfix[i]) == 1){
          a = stk.top();

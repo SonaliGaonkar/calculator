@@ -1,4 +1,5 @@
 #define CATCH_CONFIG_MAIN
+#include <catch.hpp>
 #include "calculators.h"
 #include<QApplication>
 #include<QFile>
@@ -12,8 +13,8 @@ int main(int argc, char *argv[])
 
   class calculators w;
     w.show();
-     return a.exec();
-
+     //return a.exec();
+     return Catch::Session().run(argc,argv);
 
 
 }

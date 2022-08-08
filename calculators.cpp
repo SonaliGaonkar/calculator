@@ -40,13 +40,13 @@ calculators::~calculators()
 {
   delete ui;
 }
+
 void calculators::setText()
 {
     QPushButton *button=(QPushButton*)sender();
     ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
-    ui->subDisplay->setText(ui->mainDisplay->text());
+ui->subDisplay->setText(ui->mainDisplay->text());
 }
-
 void calculators::decimal(){
 
     if (!ui->mainDisplay->text().contains('.'));
