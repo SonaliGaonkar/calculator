@@ -35,7 +35,6 @@ TEST_CASE( "operand checking", "[operand]" ) {
     REQUIRE(isOperand('7')  == 1 );
     REQUIRE(isOperand('8')  == 1 );
     REQUIRE(isOperand('9')  == 1 );
-
 }
 
 TEST_CASE( "checking of all operations", "[Add,subtract,multiply,divide,exponent]" ) {
