@@ -88,7 +88,7 @@ int isOperator(char ch){
 }
 
 //function to detect if the char is operand or not
- int isOperand(char ch){
+int isOperand(char ch){
       if(ch >= '0' && ch <= '9')
          return 1;
       else
