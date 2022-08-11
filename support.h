@@ -27,6 +27,4 @@ int isOperand(char ch);
 //final function that get infix expression and evaluate it by convert it to Postfix
   long long evaluate(std::string str);
 
-  //settext function
- // long long setText(string);
 #endif // SUPPORT_H

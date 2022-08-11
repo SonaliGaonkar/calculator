@@ -16,13 +16,13 @@ calculators::calculators(QWidget *parent):
     QString butName = "Button" + QString::number(i);
     numButtons[i] = calculators::findChild<QPushButton *>(butName);
 
-    connect(numButtons[i], SIGNAL(released()),this, SLOT(setText()));
+    connect(numButtons[i], SIGNAL(released()),this, SLOT(numText()));
     }
-    connect(ui->Addition,    SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->Subtraction, SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->Multiply,    SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->Division,    SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->Exponent,    SIGNAL(released()), this, SLOT(setText()));
+    connect(ui->Addition,    SIGNAL(released()), this, SLOT(unaryoperator()));
+    connect(ui->Subtraction, SIGNAL(released()), this, SLOT(unaryoperator()));
+    connect(ui->Multiply,    SIGNAL(released()), this, SLOT(unaryoperator()));
+    connect(ui->Division,    SIGNAL(released()), this, SLOT(unaryoperator()));
+    connect(ui->Exponent,    SIGNAL(released()), this, SLOT(unaryoperator()));
 
     connect(ui->openbracket, SIGNAL(released()), this, SLOT(setText()));
     connect(ui->closebracket,SIGNAL(released()), this, SLOT(setText()));
@@ -41,12 +41,20 @@ calculators::~calculators()
   delete ui;
 }
 
-void calculators::setText()
+void calculators::numText()
 {
     QPushButton *button=(QPushButton*)sender();
-    ui->mainDisplay->setText(ui->mainDisplay->text()+' '+button->text());
+    ui->mainDisplay->setText(ui->mainDisplay->text() + button->text());
 ui->subDisplay->setText(ui->mainDisplay->text());
 }
+void calculators::unaryoperator(){
+
+    QPushButton *button=(QPushButton*)sender();
+
+    ui->mainDisplay->setText(ui->mainDisplay->text() +' '+ button->text() +' ');
+ui->subDisplay->setText(ui->mainDisplay->text());
+}
+
 void calculators::decimal(){
 
     if (!ui->mainDisplay->text().contains('.'));

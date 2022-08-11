@@ -26,7 +26,8 @@ public:
 bool waitingForOperand;
 
   public slots:
-    void setText();
+    void numText();
+    void unaryoperator();
     void equalButtonPressed();
     void decimal();
     void theme1();
