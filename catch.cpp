@@ -13,6 +13,11 @@ TEST_CASE( "precedence checking", "[prec]" ) {
     REQUIRE(prec('k') == -1);
 }
 
+TEST_CASE( "infix to postfix", "[prec]" ) {
+
+    REQUIRE(infixToPostfix("9 + 5 - 3") == "9 5 + 3 - ");
+}
+
 TEST_CASE( "operator checking", "[operator]" ) {
 
       REQUIRE(isOperator('+')  == 1 );
