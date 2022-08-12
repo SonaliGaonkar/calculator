@@ -13,7 +13,7 @@ TEST_CASE( "precedence checking", "[prec]" ) {
     REQUIRE(prec('k') == -1);
 }
 
-TEST_CASE( "infix to postfix", "[prec]" ) {
+TEST_CASE( "infix to postfix", "[string]" ) {
 
     REQUIRE(infixToPostfix("9 + 5 - 3") == "9 5 + 3 - ");
     REQUIRE(infixToPostfix("18 + 96 - 33 + 85") == "18 96 + 33 - 85 + ");
@@ -53,12 +53,19 @@ TEST_CASE( "checking of all operations", "[Add,subtract,multiply,divide,exponent
     REQUIRE( operation(3,6,'/') == 2 );
     REQUIRE( operation(3,6,'^') == 216 );
 }
-TEST_CASE( "postfixEval", "[Add,subtract,multiply,divide,exponent]" ) {
+
+TEST_CASE( "postfixEval", "[infix to postfix string]" ) {
 
     REQUIRE( postfixEval("9 5 + 3 - ") == 11 );
     REQUIRE( postfixEval("18 96 + 33 - 85 + ") == 166 );
     REQUIRE( postfixEval("300 40 10 / 61 * - ") == 56 );
     REQUIRE( postfixEval("100 100 / 10 - 40 89 * + ") == 3551 );
+}
 
+TEST_CASE( "evaluate", "[postfix evaluation]" ) {
 
+    REQUIRE( evaluate("9 + 5 - 3") == 11 );
+    REQUIRE( evaluate("18 + 96 - 33 + 85") == 166 );
+    REQUIRE( evaluate("300 - 40 / 10 * 61") == 56 );
+    REQUIRE( evaluate("100 / 100 - 10 + 40 * 89") == 3551 );
 }
