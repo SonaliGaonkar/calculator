@@ -24,8 +24,8 @@ calculators::calculators(QWidget *parent):
     connect(ui->Division,    SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->Exponent,    SIGNAL(released()), this, SLOT(unaryoperator()));
 
-    connect(ui->openbracket, SIGNAL(released()), this, SLOT(setText()));
-    connect(ui->closebracket,SIGNAL(released()), this, SLOT(setText()));
+    connect(ui->openbracket, SIGNAL(released()), this, SLOT(unaryoperator()));
+    connect(ui->closebracket,SIGNAL(released()), this, SLOT(unaryoperator()));
 
     connect(ui->decimal,     SIGNAL(released()), this, SLOT(decimal()));
 
