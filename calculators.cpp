@@ -23,17 +23,13 @@ calculators::calculators(QWidget *parent):
     connect(ui->Multiply,    SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->Division,    SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->Exponent,    SIGNAL(released()), this, SLOT(unaryoperator()));
-
     connect(ui->openbracket, SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->closebracket,SIGNAL(released()), this, SLOT(unaryoperator()));
-
     connect(ui->decimal,     SIGNAL(released()), this, SLOT(decimal()));
-
     connect(ui->Equal,       SIGNAL(released()), this, SLOT(equalButtonPressed()));
     connect(ui->Theme1,      SIGNAL(released()), this, SLOT(theme1()));
     connect(ui->Theme2,      SIGNAL(released()), this, SLOT(theme2()));
     connect(ui->Theme3,      SIGNAL(released()), this, SLOT(theme3()));
-
   }
 
 calculators::~calculators()
@@ -45,14 +41,13 @@ void calculators::numText()
 {
     QPushButton *button=(QPushButton*)sender();
     ui->mainDisplay->setText(ui->mainDisplay->text() + button->text());
-ui->subDisplay->setText(ui->mainDisplay->text());
+    ui->subDisplay->setText(ui->mainDisplay->text());
 }
 void calculators::unaryoperator(){
 
     QPushButton *button=(QPushButton*)sender();
-
     ui->mainDisplay->setText(ui->mainDisplay->text() +' '+ button->text() +' ');
-ui->subDisplay->setText(ui->mainDisplay->text());
+    ui->subDisplay->setText(ui->mainDisplay->text());
 }
 
 void calculators::decimal(){

@@ -2,7 +2,6 @@
 #include<stack>
 #include<cmath>
 
-//function to return specific substring start from specific position unil reaching next " "
 std::string scanNum(int &i,std::string str){
    std::string value;
    value = str[i++];
@@ -12,8 +11,6 @@ std::string scanNum(int &i,std::string str){
    return value;
 }
 
-
-//Function to return precedence of operators
 int prec(char c) {
     if(c == '^')
         return 3;
@@ -25,26 +22,23 @@ int prec(char c) {
         return -1;
 }
 
-// function to convert infix expression to postfix expression
 std::string infixToPostfix(std::string s) {
-    std::stack<char> st; //For stack operations
+    std::stack<char> st;
         std::string result;
 
         for(int i = 0; i < s.length(); i++) {
             char c = s[i];
             if(c==' ')continue;
 
-            // If the character is an operand, add it to output string.
             else if(c >= '0' && c <= '9'){
                 result +=scanNum(i,s);
                 result +=" ";
             }
-            // If the scanned character is ‘(‘, push it to the stack.
+
             else if(c == '(')
                 st.push('(');
 
-            // If the scanned character is an ‘)’, Pop and to output string from the stack until reaching ‘(‘
-            else if(c == ')') {
+             else if(c == ')') {
                 while(st.top() != '(')
                 {
                     result += st.top();
@@ -54,7 +48,6 @@ std::string infixToPostfix(std::string s) {
                 st.pop();
             }
 
-            //If an operator is scanned
             else {
                 while(!st.empty() && prec(s[i]) <= prec(st.top())) {
                     result += st.top();
@@ -73,15 +66,12 @@ std::string infixToPostfix(std::string s) {
             return result ;
         }
 
-
-        //function to detect if the char is operator or not
         int isOperator(char ch){
            if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^')
               return 1;
            else return 0;
         }
 
-        //function to detect if the char is operand or not
         int isOperand(char ch){
               if(ch >= '0' && ch <= '9')
                  return 1;
@@ -102,7 +92,6 @@ std::string infixToPostfix(std::string s) {
                  return INT_MIN;
         }
 
-        //function to return value from postifix expression
         long long postfixEval(std::string postfix){
            long long a, b;
            std::stack<long long> stk;
@@ -120,9 +109,8 @@ std::string infixToPostfix(std::string s) {
            }
            return stk.top();
         }
-        //final function that get infix expression and evaluate it by convert it to Postfix
+
         long long evaluate(std::string str){
             std::string temp=infixToPostfix(str);
             return postfixEval(temp);
         }
-
