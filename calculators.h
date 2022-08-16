@@ -1,12 +1,6 @@
 #ifndef CALCULATORS_H
 #define CALCULATORS_H
 #include <QMainWindow>
-//#include <iostream>
-//#include <string>
-//#include <fstream>
-//#include <sstream>
-//#include <stack>
-//#include <vector>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class calculators; }
@@ -32,9 +26,5 @@ bool waitingForOperand;
     void theme1();
     void theme2();
     void theme3();
-
-private:
-    QString mainDisplay = "";
-    QString subDisplay = "";
 };
-#endif // CALCULATORS_H
+#endif

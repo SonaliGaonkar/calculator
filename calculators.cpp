@@ -1,9 +1,7 @@
-﻿#include "calculators.h"
-#include "ui_calculators.h"
-#include<QFile>
-#include<math.h>
-#include<QApplication>
+﻿#include<QFile>
 #include "support.h"
+#include "calculators.h"
+#include "ui_calculators.h"
 
 calculators::calculators(QWidget *parent):
      QMainWindow(parent),

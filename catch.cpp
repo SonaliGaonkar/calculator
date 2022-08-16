@@ -1,5 +1,4 @@
 #include <catch.hpp>
-//#include <QString>
 #include <cmath>
 #include <support.h>
 

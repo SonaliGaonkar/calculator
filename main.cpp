@@ -1,9 +1,7 @@
 #define CATCH_CONFIG_MAIN
 #include<QApplication>
-#include<QFile>
 #include <catch.hpp>
-#include "calculators.h"
-//#include<QStack>
+#include <calculators.h>
 
 #define UNIT_TEST_ENABLED
 int main(int argc, char *argv[])
