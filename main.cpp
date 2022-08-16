@@ -1,5 +1,5 @@
-#define CATCH_CONFIG_MAIN
-#include<QApplication>
+#define CATCH_CONFIG_RUNNER
+#include <QApplication>
 #include <catch.hpp>
 #include <calculators.h>
 

@@ -59,7 +59,7 @@ void calculators::decimal(){
 void calculators::equalButtonPressed()
 {
     std::string expression=ui->mainDisplay->text().toStdString();
-    long long result = evaluate  (expression);
+    long long result = evaluate(expression);
     ui->mainDisplay->setText(QString::number(result,'g',15));
 }
 
