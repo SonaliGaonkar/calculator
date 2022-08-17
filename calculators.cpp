@@ -23,7 +23,7 @@ calculators::calculators(QWidget *parent):
     connect(ui->Exponent,    SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->openbracket, SIGNAL(released()), this, SLOT(unaryoperator()));
     connect(ui->closebracket,SIGNAL(released()), this, SLOT(unaryoperator()));
-    connect(ui->decimal,     SIGNAL(released()), this, SLOT(decimal()));
+    connect(ui->decimal,     SIGNAL(released()), this, SLOT(numText()));
     connect(ui->Equal,       SIGNAL(released()), this, SLOT(equalButtonPressed()));
     connect(ui->Theme1,      SIGNAL(released()), this, SLOT(theme1()));
     connect(ui->Theme2,      SIGNAL(released()), this, SLOT(theme2()));
@@ -48,18 +48,10 @@ void calculators::unaryoperator(){
     ui->subDisplay->setText(ui->mainDisplay->text());
 }
 
-void calculators::decimal(){
-
-    if (!ui->mainDisplay->text().contains('.'));
-        {
-            ui->mainDisplay->setText(ui->mainDisplay->text()+'.');
-}
-}
-
 void calculators::equalButtonPressed()
 {
     std::string expression=ui->mainDisplay->text().toStdString();
-    long long result = evaluate(expression);
+    double result = evaluate(expression);
     ui->mainDisplay->setText(QString::number(result,'g',15));
 }
 

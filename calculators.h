@@ -22,7 +22,6 @@ bool waitingForOperand;
     void numText();
     void unaryoperator();
     void equalButtonPressed();
-    void decimal();
     void theme1();
     void theme2();
     void theme3();

@@ -35,6 +35,7 @@ std::string infixToPostfix(std::string s) {
                 result +=" ";
             }
 
+
             else if(c == '(')
                 st.push('(');
 
@@ -62,22 +63,22 @@ std::string infixToPostfix(std::string s) {
                 result +=" ";
                 st.pop();
             }
-
             return result ;
-        }
+}
 
-        int isOperator(char ch){
+double isOperator(char ch){
            if(ch == '+'|| ch == '-'|| ch == '*'|| ch == '/' || ch == '^')
               return 1;
            else return 0;
-        }
+}
 
-        int isOperand(char ch){
+double isOperand(char ch){
               if(ch >= '0' && ch <= '9')
                  return 1;
               else return 0;
-        }
-        long long operation(long long a, long long b, char op){
+}
+
+double operation(double a, double b, char op){
               if(op == '+')
                  return b+a;
               else if(op == '-')
@@ -90,11 +91,11 @@ std::string infixToPostfix(std::string s) {
                  return (long long)pow(b,a);
               else
                  return INT_MIN;
-        }
+}
 
-        long long postfixEval(std::string postfix){
-           long long a, b;
-           std::stack<long long> stk;
+double postfixEval(std::string postfix){
+           double a, b;
+           std::stack<double> stk;
            int i;
            for(i=0; i<postfix.length(); i++){
               if(isOperator(postfix[i]) == 1){
@@ -104,13 +105,13 @@ std::string infixToPostfix(std::string s) {
                  stk.pop();
                  stk.push(operation(a, b, postfix[i]));
               }else if(isOperand(postfix[i]) == 1){
-                 stk.push(stoi(scanNum(i,postfix)));
+                 stk.push(stod(scanNum(i,postfix)));
               }
            }
            return stk.top();
-        }
+}
 
-        long long evaluate(std::string str){
+double evaluate(std::string str){
             std::string temp=infixToPostfix(str);
             return postfixEval(temp);
-        }
+}

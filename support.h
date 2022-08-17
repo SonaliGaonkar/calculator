@@ -8,14 +8,14 @@ int prec(char c) ;
 
 std::string infixToPostfix(std::string s) ;
 
-int isOperator(char ch);
+double isOperator(char ch);
 
-int isOperand(char ch);
+double isOperand(char ch);
 
-long long operation(long long a, long long b, char op);
+double operation(double a, double b, char op);
 
-long long postfixEval(std::string postfix);
+double postfixEval(std::string postfix);
 
-long long evaluate(std::string str);
+double evaluate(std::string str);
 
 #endif
