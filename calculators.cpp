@@ -57,7 +57,7 @@ void calculators::equalButtonPressed()
 
 void calculators::theme1()
 {
-    QFile file ("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/Adaptic.qss");
+    QFile file ("C:/Users/Sonali Gaonkar/Desktop/Qt/calculator/Adaptic.qss");
     file.open(QFile::ReadOnly);
     QString stylesheets = QLatin1String(file.readAll());
     setStyleSheet(stylesheets);
@@ -65,7 +65,7 @@ void calculators::theme1()
 
 void calculators ::theme2()
 {
-    QFile fib("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/fibers.qss");
+    QFile fib("C:/Users/Sonali Gaonkar/Desktop/Qt/calculator/fibers.qss");
     fib.open(QFile::ReadOnly);
     QString stylesheet = QLatin1String(fib.readAll());
     setStyleSheet(stylesheet);
@@ -73,7 +73,7 @@ void calculators ::theme2()
 
 void calculators ::theme3()
 {
-    QFile fib("C:/Users/Sonali Goenkar/Desktop/New folder/calculator/Irrorater.qss");
+    QFile fib("C:/Users/Sonali Gaonkar/Desktop/Qt/calculator/Irrorater.qss");
     fib.open(QFile::ReadOnly);
     QString stylesheet = QLatin1String(fib.readAll());
     setStyleSheet(stylesheet);
